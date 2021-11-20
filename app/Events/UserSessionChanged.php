@@ -2,7 +2,6 @@
 
 namespace App\Events;
 
-use Illuminate\Broadcasting\Channel;
 use Illuminate\Broadcasting\InteractsWithSockets;
 use Illuminate\Broadcasting\PresenceChannel;
 use Illuminate\Broadcasting\PrivateChannel;
@@ -35,6 +34,6 @@ class UserSessionChanged implements ShouldBroadcast
     {
         \Log::debug($this->message);
         \Log::debug($this->type);
-        return new Channel('notifications');
+        return new PrivateChannel('notifications');
     }
 }
