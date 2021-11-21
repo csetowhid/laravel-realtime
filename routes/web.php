@@ -23,6 +23,10 @@ Auth::routes();
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
 
+Route::view('/users', 'users.showAll')->name('users.all');
+
+Route::get('/name',)->name('users.all');
+
 
 Route::get('/chat', [ChatController::class, 'showchat'])->name('chat.show');
 Route::post('/chat/message', [ChatController::class, 'messageReceived'])->name('chat.message');
